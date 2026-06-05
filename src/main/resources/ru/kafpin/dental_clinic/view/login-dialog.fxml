@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.kafpin.dental_clinic.view.LoginDialogController"
+      style="-fx-background-color: white; -fx-padding: 20;">
+
+    <Label fx:id="titleLabel" text="Вход в систему"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Separator/>
+
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" bottom="10"/>
+        </padding>
+
+        <Label fx:id="usernameLabel" text="Логин:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200" promptText="Введите логин"/>
+
+        <Label fx:id="passwordLabel" text="Пароль:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Введите пароль"/>
+
+        <Label fx:id="languageLabel" text="Язык:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="languageCombo" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button fx:id="okButton" text="Войти"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                onAction="#handleOk"/>
+        <Button fx:id="cancelButton" text="Отмена"
+                onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

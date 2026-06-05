@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.kafpin.dental_clinic.controller.AppointmentController"
+            style="-fx-background-color: white;">
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: white; -fx-background-color: white;">
+            <GridPane hgap="15" vgap="15" style="-fx-padding: 25;">
+                <padding>
+                    <Insets top="20" right="30" bottom="20" left="30"/>
+                </padding>
+
+                <Label fx:id="titleLabel" text="Запись пациента на приём"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+
+                <Separator GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+
+                <VBox spacing="15" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                      GridPane.hgrow="NEVER" prefWidth="400">
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="patientSelectionLabel" text="Выбор пациента:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <ComboBox fx:id="patientCombo" promptText="Выберите пациента из списка" prefWidth="300"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="doctorSelectionLabel" text="Выбор врача:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <ComboBox fx:id="doctorCombo" promptText="Выберите врача из списка" prefWidth="300"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="serviceSelectionLabel" text="Услуга:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <ComboBox fx:id="serviceCombo" promptText="Выберите услугу" prefWidth="300"/>
+                        <Label fx:id="durationLabel" style="-fx-text-fill: #666; -fx-font-style: italic;"
+                               text="Выберите услугу для отображения длительности"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="appointmentDateLabel" text="Дата приёма:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <DatePicker fx:id="appointmentDatePicker" promptText="Выберите дату" prefWidth="200"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <CheckBox fx:id="reminderSentCheck" text="Отправить напоминание пациенту"/>
+                    </VBox>
+
+                </VBox>
+
+                <VBox spacing="15" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                      GridPane.hgrow="ALWAYS" GridPane.fillWidth="true">
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="patientListLabel" text="Список пациентов:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <TextField fx:id="patientSearchField" promptText="Поиск по ФИО или телефону..."
+                                   maxWidth="Infinity"/>
+                        <TableView fx:id="patientTable" prefHeight="150" maxHeight="150" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                        <Label fx:id="doctorListLabel" text="Список врачей:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <TextField fx:id="doctorSearchField" promptText="Поиск по ФИО или специализации..."
+                                   maxWidth="Infinity"/>
+                        <TableView fx:id="doctorTable" prefHeight="150" maxHeight="150" maxWidth="Infinity"/>
+                    </VBox>
+
+                </VBox>
+
+                <Separator GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+                <Label fx:id="availableTimeLabel" text="Доступное время:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" GridPane.columnSpan="2"/>
+
+                <VBox fx:id="timeSlotsContainer" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                      GridPane.columnSpan="2" spacing="8" style="-fx-padding: 5 0 10 0;"/>
+
+                <Separator GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2"/>
+
+                <HBox spacing="15" alignment="CENTER_RIGHT" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                    <Button fx:id="checkSlotButton" text="Проверить занятость врача"/>
+                    <Button fx:id="saveButton" text="Сохранить запись"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Button fx:id="clearButton" text="Очистить форму"/>
+                </HBox>
+
+            </GridPane>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.kafpin.dental_clinic.controller.FinanceController"
+      style="-fx-background-color: white; -fx-padding: 15;">
+
+    <Label fx:id="debtsTitleLabel" text="Задолженности пациентов" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="debtsTable" prefHeight="250" VBox.vgrow="ALWAYS">
+        <placeholder>
+            <Label text="Нет задолженностей"/>
+        </placeholder>
+    </TableView>
+
+    <Separator/>
+
+    <Label fx:id="paymentsTitleLabel" text="История платежей" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="paymentsTable" prefHeight="200" VBox.vgrow="ALWAYS">
+        <placeholder>
+            <Label text="Нет платежей"/>
+        </placeholder>
+    </TableView>
+
+    <Separator/>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button fx:id="addPaymentButton" text="Внести оплату"/>
+        <Button fx:id="generateBillButton" text="Сформировать счёт"/>
+        <Button fx:id="refreshFinanceButton" text="Обновить"/>
+    </HBox>
+
+</VBox>

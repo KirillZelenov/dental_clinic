@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.kafpin.dental_clinic.controller.ScheduleController"
+      style="-fx-background-color: white; -fx-padding: 15;">
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label fx:id="dateLabel" text="Дата:"/>
+        <DatePicker fx:id="filterDatePicker" promptText="Выберите дату" prefWidth="150"/>
+        <Label fx:id="doctorLabel" text="Врач:"/>
+        <ComboBox fx:id="doctorFilterCombo" promptText="Все врачи" prefWidth="200"/>
+        <Button fx:id="showScheduleButton" text="Показать расписание"/>
+        <Button fx:id="refreshButton" text="Обновить"/>
+    </HBox>
+
+    <TableView fx:id="scheduleTable" VBox.vgrow="ALWAYS">
+        <placeholder>
+            <Label text="Нет записей на выбранную дату"/>
+        </placeholder>
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button fx:id="cancelButton" text="Отменить запись"/>
+        <Button fx:id="completeButton" text="Отметить как завершённый"/>
+        <Button fx:id="sendReminderButton" text="Отправить напоминание"/>
+    </HBox>
+
+</VBox>

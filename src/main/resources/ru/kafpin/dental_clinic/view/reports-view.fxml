@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.kafpin.dental_clinic.controller.ReportsController"
+      style="-fx-background-color: white; -fx-padding: 15;">
+
+    <Label fx:id="reportsTitleLabel" text="Формирование отчётов для руководства"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Separator/>
+
+    <GridPane hgap="15" vgap="10">
+        <Label fx:id="periodLabel" text="Период отчёта:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="fromLabel" text="с:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="startDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="150"/>
+        <Label fx:id="toLabel" text="по:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="endDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="150"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox spacing="15">
+        <Button fx:id="patientCountButton" text="Количество пациентов"/>
+        <Button fx:id="revenueByDoctorButton" text="Выручка по врачам"/>
+        <Button fx:id="revenueByServiceButton" text="Выручка по услугам"/>
+        <Button fx:id="occupancyButton" text="Загруженность расписания"/>
+    </HBox>
+
+    <Separator/>
+
+    <TextArea fx:id="reportArea" editable="false" wrapText="true"
+              prefHeight="250" VBox.vgrow="ALWAYS"/>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button fx:id="exportButton" text="Экспорт в CSV"/>
+    </HBox>
+
+</VBox>

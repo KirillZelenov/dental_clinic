@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.kafpin.dental_clinic.controller.MedicalHistoryController"
+            style="-fx-background-color: white;">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label fx:id="selectPatientLabel" text="Выберите пациента:"/>
+                <ComboBox fx:id="patientHistoryCombo" promptText="Выберите пациента" prefWidth="300"/>
+                <Button fx:id="loadHistoryButton" text="Показать историю"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+            <placeholder>
+                <Label text="Нет истории лечения"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 15;">
+            <Button fx:id="addTreatmentButton" text="Добавить запись о лечении"/>
+            <Button fx:id="editTreatmentButton" text="Редактировать"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
